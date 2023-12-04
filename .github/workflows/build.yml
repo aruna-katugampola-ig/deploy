@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+  workflow_dispatch:
+
+env:
+  REPOSITORY: ${{ inputs.repository-prefix }}tastyworks/alerting
+
+jobs:
+  build:
+    runs-on:
+      - ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: project
+      - name: Build Alerting Image
+        run: |
+          cd project/deploy/
+          mvn clean package
