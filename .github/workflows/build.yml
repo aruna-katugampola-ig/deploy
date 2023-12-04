@@ -18,6 +18,6 @@ jobs:
           path: project
       - name: Build Alerting Image
         run: |
-          ls -la
+          ls -la project
           cd project/deploy/
           mvn clean package
