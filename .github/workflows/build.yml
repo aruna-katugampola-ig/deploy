@@ -19,4 +19,5 @@ jobs:
       - name: Build Alerting Image
         run: |
           cd project/
+          mvn -v
           mvn clean package
