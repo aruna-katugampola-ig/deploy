@@ -7,7 +7,7 @@ concurrency:
   group: commit-stage
 
 jobs:
-  build:
+  commit:
     runs-on:
       - ubuntu-latest
     steps:
@@ -22,5 +22,8 @@ jobs:
       - name: Build
         run: |
           cd project/
-          mvn -v
+          mvn clean package
+      - name: Push
+        run: |
+          cd project/
           mvn clean package

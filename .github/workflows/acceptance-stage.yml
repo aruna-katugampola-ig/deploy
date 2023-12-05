@@ -10,7 +10,7 @@ concurrency:
   group: acceptance-stage
 
 jobs:
-  build:
+  acceptance:
     runs-on:
       - ubuntu-latest
     steps:
@@ -22,7 +22,7 @@ jobs:
         with:
           distribution: 'corretto' # See 'Supported distributions' for available options
           java-version: '17'
-      - name: Test
+      - name: Aceptance Test
         run: |
           cd project/
           mvn clean package
