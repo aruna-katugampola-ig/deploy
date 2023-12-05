@@ -3,6 +3,8 @@ name: AcceptanceTest
 on:
   workflow_run:
     workflows: [ "CommitStage" ]
+    types:
+      - completed
 
 concurrency:
   group: acceptance-stage
