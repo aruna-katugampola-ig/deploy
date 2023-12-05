@@ -1,11 +1,10 @@
-name: Build
+name: CommitStage
 
 on:
   push:
-  workflow_dispatch:
 
 concurrency:
-  group: build
+  group: commit-stage
 
 jobs:
   build:

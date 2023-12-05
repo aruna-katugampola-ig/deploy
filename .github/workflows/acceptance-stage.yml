@@ -1,11 +1,11 @@
 name: AcceptanceTest
 
 on:
-  push:
-  workflow_dispatch:
+  workflow_run:
+    workflows: [ "CommitStage" ]
 
 concurrency:
-  group: acceptance-tests
+  group: acceptance-stage
 
 jobs:
   build:
