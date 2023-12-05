@@ -1,11 +1,11 @@
-name: Build
+name: AcceptanceTest
 
 on:
   push:
   workflow_dispatch:
 
 concurrency:
-  group: build
+  group: acceptance-tests
 
 jobs:
   build:
@@ -20,8 +20,7 @@ jobs:
         with:
           distribution: 'corretto' # See 'Supported distributions' for available options
           java-version: '17'
-      - name: Build
+      - name: Test
         run: |
           cd project/
-          mvn -v
           mvn clean package
